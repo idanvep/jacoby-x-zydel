@@ -1,12 +1,14 @@
 def is_dominant_diagonally(A):
-    num_of_cols_and_rows = len(A)
-    for i in range(num_of_cols_and_rows):
-        diag_elem = abs(A[i][i])
-        non_diag_sum = sum(abs(A[i][j]) for j in range(num_of_cols_and_rows) if j != i)
-        if diag_elem < non_diag_sum:
+    sum_of_row = 0
+    num_of_rows_and_cols = len(A)
+    for i in range(num_of_rows_and_cols):
+        for j in range(num_of_rows_and_cols):
+            if j != i:
+                sum_of_row += abs(A[i][j])
+        if sum_of_row >= A[i][i]:
             return False
+        sum_of_row = 0
     return True
-
 
 def make_diagonal_dominant(A):
     num_of_cols_and_rows = len(A)

@@ -1,3 +1,4 @@
+#idan veprisnki 323061770 nikita kimelblat 212363576
 import sympy as sp
 
 
